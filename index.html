@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Python Training</h1>
+				</section>
+				<section>
+					<h3>Agenda</h3>
+				</section>
+				<section>
+					Access the interpreter
+					<pre><code data-trim>
+						$ python3.6
+						Python 3.6 (default, Sep 16 2015, 09:25:04)
+						[GCC 4.8.2] on linux
+						Type "help", "copyright", "credits" or "license" for more information.
+						>>>
+					</code></pre>
+				</section>
+				<section>
+					<h3>Numbers</h3>
+					<section>
+						<pre><code class="python" data-trim>
+							>>> 2 + 2
+							4
+							>>> 50 - 5*6
+							20
+							>>> (50 - 5*6) / 4
+							5.0
+							>>> 8 / 5  # division always returns a floating point number
+							1.6	
+							>>> 17 // 3  # floor division discards the fractional part
+							5
+							>>> 17 % 3  # the % operator returns the remainder of the division
+							2
+							>>> 5 ** 2  # 5 squared
+							25
+							</code></pre>
+					</section>
+					<section>
+						Create variables
+						<pre><code class="python" data-trim>
+								>>> width = 20
+								>>> height = 5 * 9
+								>>> width * height
+								900
+								>>> n  # try to access an undefined variable
+						</code></pre>
+					</section>
+					<section>
+						_ Variable
+						<pre><code class="python" data-trim>
+								>>> tax = 12.5 / 100
+								>>> price = 100.50
+								>>> price * tax
+								12.5625
+								>>> price + _
+								113.0625
+								>>> round(_, 2)
+								113.06
+						</code></pre>
+					</section>
+					<section>
+						<h4>Exercises</h4>
+						<ul>
+							<li>What is the result of \[(10 + 2.5) * 3\]</li>
+							<li>What is the result of \[(50 * 10)^{1/2}\]</li>
+							<li>How could we verify that a number is even?</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>Strings</h3>
+					<section>
+						<pre><code class="python" data-trim>
+							>>> 'spam eggs'  # single quotes
+							'spam eggs'
+							>>> 'doesn\'t'  # use \' to escape the single quote...
+							"doesn't"
+							>>> "doesn't"  # ...or use double quotes instead
+							"doesn't"
+							>>> '"Yes," he said.'
+							'"Yes," he said.'
+							>>> "\"Yes,\" he said."
+							'"Yes," he said.'
+							>>> '"Isn\'t," she said.'
+							'"Isn\'t," she said.'
+						</code></pre>	
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+								>>> s = 'First line.\nSecond line.'  # \n means newline
+								>>> s  # without print(), \n is included in the output
+								'First line.\nSecond line.'
+								>>> print(s)  # with print(), \n produces a new line
+								First line.
+								Second line.
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+								>>> print('C:\some\name')  # here \n means newline!
+								C:\some
+								ame
+								>>> print(r'C:\some\name')  # note the r before the quote
+								C:\some\name
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+								print("""\
+								Usage: thingy [OPTIONS]
+									 -h                        Display this usage message
+									 -H hostname               Hostname to connect to
+								""")
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+								>>> 3 * 'un' + 'ium'
+								'unununium'
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+								>>> text = ('Put several strings within parentheses '
+								...         'to have them joined together.')
+								>>> text
+								'Put several strings within parentheses to have them joined together.'
+								>>> prefix = 'Py'
+								>>> prefix 'thon'  # can't concatenate a variable and a string literal
+								...
+								SyntaxError: invalid syntax
+								>>> ('un' * 3) 'ium'
+								...
+								SyntaxError: invalid syntax
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+							>>> word = 'Python'
+							>>> word[0]  # character in position 0
+							'P'
+							>>> word[-1]  # last character
+							'n'
+							>>> word[0:2]  # characters from position 0 (included) to 2 (excluded)
+							'Py'
+							>>> word[42]  # the word only has 6 characters
+							>>> word[4:42]
+							>>> word[0] = 'J'
+							>>> s = 'supercalifragilisticexpialidocious'
+							>>> len(s)
+							34
+						</code></pre>
+					</section>
+					<section>
+						<h4>Exercises</h4>
+						<ul>
+							<li>How can we know if 'Python' is contained in 'Python is great'?</li>
+							<li>Show a string slice that represents the whole string</li>
+							<li>
+								<p>What slice parameters do we need to use?</p>
+								<pre><code class="python" data-trim>
+									>>> a = 'I will never'
+									>>> b = 'learn Python'
+									>>> c = a[?] + b[?]
+									>>> c == 'I will learn Python'
+									>>> True
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Exercises</h4>
+						<ul>
+							<li>How can we know if a string contains only alpha-numeric characters?</li>
+							<li>
+								<p>What does the following code prints?</p>
+								<pre><code class="python" data-trim>
+									>>> a = 'Today we have {0} hours of course left together'.format(2)
+									>>> print(a)
+								</code></pre>
+							</li>
+						</ul>
+						<p>For more information, see:</p>
+						<small>
+							<p><a href="https://docs.python.org/3/library/stdtypes.html#textseq">String methods</a></p>
+							<p><a href="https://docs.python.org/3/library/string.html#formatstrings">Format strings</a></p>
+						</small>
+					</section>
+				</section>
+				<section>
+					<h3>Lists</h3>
+					<section>
+						<pre><code class="python" data-trim>
+								>>> squares = [0, 1, 4, 9, 16, 20]
+								>>> squares[0]  # indexing returns the item
+								1
+								>>> squares[-1]
+								20
+								>>> squares[:]
+								[0, 1, 4, 9, 16, 20]
+								>>> squares + [ 36, 49 ]
+								[0, 1, 4, 9, 16, 20, 36, 49]
+								>>> sqares[5] = 25
+								>>> squares.append(8**2)
+						</code></pre>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				math: {
+					config: 'TeX-AMS_HTML-full'
+				},
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
