@@ -8,4 +8,5 @@ The training material is mainly coming from the following sources:
 # Third-party Licenses
 
 [reveal.js License](LICENSE-revealjs)
+
 [Python License](LICENSE-python)
