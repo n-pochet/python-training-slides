@@ -66,7 +66,6 @@
 								>>> width = 20
 								>>> height = 5 * 9
 								>>> width * height
-								900
 								>>> n  # try to access an undefined variable
 						</code></pre>
 					</section>
@@ -76,11 +75,8 @@
 								>>> tax = 12.5 / 100
 								>>> price = 100.50
 								>>> price * tax
-								12.5625
 								>>> price + _
-								113.0625
 								>>> round(_, 2)
-								113.06
 						</code></pre>
 					</section>
 					<section>
@@ -97,36 +93,24 @@
 					<section>
 						<pre><code class="python" data-trim>
 							>>> 'spam eggs'  # single quotes
-							'spam eggs'
 							>>> 'doesn\'t'  # use \' to escape the single quote...
-							"doesn't"
 							>>> "doesn't"  # ...or use double quotes instead
-							"doesn't"
 							>>> '"Yes," he said.'
-							'"Yes," he said.'
 							>>> "\"Yes,\" he said."
-							'"Yes," he said.'
 							>>> '"Isn\'t," she said.'
-							'"Isn\'t," she said.'
 						</code></pre>	
 					</section>
 					<section>
 						<pre><code class="python" data-trim>
 								>>> s = 'First line.\nSecond line.'  # \n means newline
 								>>> s  # without print(), \n is included in the output
-								'First line.\nSecond line.'
 								>>> print(s)  # with print(), \n produces a new line
-								First line.
-								Second line.
 						</code></pre>
 					</section>
 					<section>
 						<pre><code class="python" data-trim>
 								>>> print('C:\some\name')  # here \n means newline!
-								C:\some
-								ame
 								>>> print(r'C:\some\name')  # note the r before the quote
-								C:\some\name
 						</code></pre>
 					</section>
 					<section>
@@ -141,7 +125,6 @@
 					<section>
 						<pre><code class="python" data-trim>
 								>>> 3 * 'un' + 'ium'
-								'unununium'
 						</code></pre>
 					</section>
 					<section>
@@ -149,31 +132,22 @@
 								>>> text = ('Put several strings within parentheses '
 								...         'to have them joined together.')
 								>>> text
-								'Put several strings within parentheses to have them joined together.'
 								>>> prefix = 'Py'
 								>>> prefix 'thon'  # can't concatenate a variable and a string literal
-								...
-								SyntaxError: invalid syntax
 								>>> ('un' * 3) 'ium'
-								...
-								SyntaxError: invalid syntax
 						</code></pre>
 					</section>
 					<section>
 						<pre><code class="python" data-trim>
 							>>> word = 'Python'
 							>>> word[0]  # character in position 0
-							'P'
 							>>> word[-1]  # last character
-							'n'
 							>>> word[0:2]  # characters from position 0 (included) to 2 (excluded)
-							'Py'
 							>>> word[42]  # the word only has 6 characters
 							>>> word[4:42]
 							>>> word[0] = 'J'
 							>>> s = 'supercalifragilisticexpialidocious'
 							>>> len(s)
-							34
 						</code></pre>
 					</section>
 					<section>
@@ -218,13 +192,9 @@
 						<pre><code class="python" data-trim>
 								>>> squares = [0, 1, 4, 9, 16, 20]
 								>>> squares[0]  # indexing returns the item
-								1
 								>>> squares[-1]
-								20
 								>>> squares[:]
-								[0, 1, 4, 9, 16, 20]
 								>>> squares + [ 36, 49 ]
-								[0, 1, 4, 9, 16, 20, 36, 49]
 								>>> sqares[5] = 25
 								>>> squares.append(8**2)
 						</code></pre>
