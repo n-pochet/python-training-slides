@@ -190,14 +190,50 @@
 					<h3>Lists</h3>
 					<section>
 						<pre><code class="python" data-trim>
-								>>> squares = [0, 1, 4, 9, 16, 20]
-								>>> squares[0]  # indexing returns the item
-								>>> squares[-1]
-								>>> squares[:]
-								>>> squares + [ 36, 49 ]
-								>>> sqares[5] = 25
-								>>> squares.append(8**2)
+							>>> squares = [0, 1, 4, 9, 16, 20]
+							>>> squares[0]  # indexing returns the item
+							>>> squares[-1]
+							>>> squares[:]
+							>>> squares + [ 36, 49 ]
+							>>> sqares[5] = 25
+							>>> squares.append(8**2)
+							>>> squares[3:] = []
+							>>> squares[:] = []
 						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+							>>> a = ['a', 'b', 'c']
+							>>> n = [1, 2, 3]
+							>>> x = [a, n]
+							>>> x[0]
+							>>> x[0][1]
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="python" data-trim>
+							>>> a = [1, 2, 3]
+							>>> for elt in a:
+							>>> ...	print(elt)
+						</code></pre>
+					</section>
+					<section>
+						<h4>Exercises</h4>
+						<ul>
+							<li>
+								Given the following list:
+								<pre><code class="python" data-trim>
+									>>> a = range(10) # All integers from 0 to 10 (not included)
+								</code></pre>
+								Add 1 to all the items and print them
+							</li>
+							<li>
+								Using the same list, print the sum of all the elements
+							</li>
+							<li>
+								Using the same list, print the multiplication of all the elements
+							</li>
+						</ul>
 					</section>
 				</section>
 			</div>
