@@ -214,7 +214,7 @@
 						<pre><code class="python" data-trim>
 							>>> a = [1, 2, 3]
 							>>> for elt in a:
-							>>> ...	print(elt)
+							...	print(elt)
 						</code></pre>
 					</section>
 					<section>
@@ -223,7 +223,7 @@
 							<li>
 								Given the following list:
 								<pre><code class="python" data-trim>
-									>>> a = range(10) # All integers from 0 to 10 (not included)
+									>>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
 								</code></pre>
 								Add 1 to all the items and print them
 							</li>
@@ -235,6 +235,75 @@
 							</li>
 						</ul>
 					</section>
+				</section>
+				<section>
+					<h3>Control Flow</h3>
+					<section>
+						<h4>if Statements</h4>
+						<pre><code class="python" data-trim>
+							>>> x = int(input("Please enter an integer: "))
+							>>> if x < 0:
+							...     x = 0
+							...     print('Negative changed to zero')
+							... elif x == 0:
+							...     print('Zero')
+							... elif x == 1:
+							...     print('Single')
+							... else:
+							...     print('More')
+						</code></pre>
+					</section>
+					<section>
+						<h4>for Statement</h4>
+						<pre><code class="python" data-trim>
+							words = ['cat', 'window', 'defenestrate']
+							>>> for w in words:
+							...     print(w, len(w))
+							>>> for w in words[:]:  # Loop over a slice copy of the entire list.
+							...     if len(w) > 6:
+							...         words.insert(0, w)
+						</code></pre>
+					</section>
+					<section>
+						<h4>range Function</h4>
+						<pre><code class="python" data-trim>
+							>>> for i in range(5):
+							...     print(i)
+							>>> range(5, 10)
+							>>> range(1, 10, 3)
+							>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+							>>> for i in range(len(a)):
+							...     print(i, a[i])
+						</code></pre>
+					</section>
+					<section>
+						<h4>break and continue Statements, and else Clauses on Loops</h4>
+						<pre><code class="python" data-trim>
+							>>> for n in range(2, 10):
+							...     for x in range(2, n):
+							...         if n % x == 0:
+							...             print(n, 'equals', x, '*', n//x)
+							...             break
+							...     else:
+							...         # loop fell through without finding a factor
+							...         print(n, 'is a prime number')
+							>>> for num in range(2, 10):
+							...     if num % 2 == 0:
+							...         print("Found an even number", num)
+							...         continue
+							...     print("Found a number", num)
+						</code></pre>
+					</section>
+					<section>
+						<h4>pass Statements</h4>
+						<pre><code class="python" data-trim>
+							>>> while True:
+							...     pass
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h3>Functions</h3>
 				</section>
 			</div>
 		</div>
