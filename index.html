@@ -153,7 +153,7 @@
 					<section>
 						<h4>Exercises</h4>
 						<ul>
-							<li>How can we know if 'Python' is contained in 'Python is great'?</li>
+							<li>How can we know if 'Python' is contained <b>in</b> 'Python is great'?</li>
 							<li>Show a string slice that represents the whole string</li>
 							<li>
 								<p>What slice parameters do we need to use?</p>
@@ -262,6 +262,20 @@
 							>>> for w in words[:]:  # Loop over a slice copy of the entire list.
 							...     if len(w) > 6:
 							...         words.insert(0, w)
+						</code></pre>
+					</section>
+					<section>
+						<h4>while Statement</h4>
+						<pre class="fragment current-visible"><code class="python" data-trim>
+							>>> i = 0
+							>>> while i <= 10:
+							... 	print(i)
+						</code></pre>
+						<pre class="fragment current-visible"><code class="python" data-trim>
+							>>> i = 0
+							>>> while i <= 10:
+							... 	print(i)
+							... 	i += 1
 						</code></pre>
 					</section>
 					<section>
