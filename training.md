@@ -32,6 +32,16 @@ Type "help", "copyright", "credits" or "license" for more information.
 25
 ```
 
+???
+We can use Python to make regular math operations
+
+The order of operations is the same as usual
+
+Pay attention to the difference between the normal division `/` and the floor division `//`
+
+`%` is the modulo operation, returning the remainder of the division
+
+`**` can be use to return the power of a number
 --
 
 ## Create variables
@@ -42,6 +52,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> n  # try to access an undefined variable
 ```
 
+???
+Create a variable is as simple as defining it by choosing a name for it and assign it a value with `=`
+If we try to access a variable that doesn't exist, we get an exception
 ---
 
 # Numbers
@@ -56,6 +69,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> round(_, 2)
 ```
 
+???
+The `_` variable can be used, in the interpreter, to get the value of the last printed expression
+
 ---
 
 # Numbers
@@ -65,6 +81,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 * What is the result of `\[(10 + 2.5) * 3\]`
 * What is the result of `\[(50 * 10)^{1/2}\]`
 * How could we verify that a number is even?
+
+???
+We just need to use the basic python arithmetic operators to have the results.
+
+To test if a number is even, we can test number % 2 == 0
 
 ---
 
@@ -79,6 +100,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> '"Isn\'t," she said.'
 ```
 
+???
+This is just to demonstrate the different ways to create strings and to escape some elements
+
 --
 
 ```python
@@ -86,6 +110,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> s  # without print(), \n is included in the output
 >>> print(s)  # with print(), \n produces a new line
 ```
+
+???
+Show the difference between the output on the interpreter and the built-in print() function
 
 ---
 
@@ -95,6 +122,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> print('C:\some\name')  # here \n means newline!
 >>> print(r'C:\some\name')  # note the r before the quote
 ```
+
+???
+We can also create raw strings with r""
+
 --
 
 ```python
@@ -105,11 +136,19 @@ Usage: thingy [OPTIONS]
 """)
 ```
 
+???
+Multi-line strings can be obtained with triple simple (double) quotes.
+
+They are also used to document
+
 --
 
 ```python
 >>> 3 * 'un' + 'ium'
 ```
+
+???
+We can apply multiplication and addition of strings.
 
 ---
 
@@ -124,6 +163,13 @@ Usage: thingy [OPTIONS]
 >>> ('un' * 3) 'ium'
 ```
 
+???
+Two string litterals can be joined togheter if we use parentheses
+
+We can't concatenate a string litteral with a variable (use +)
+
+We can't concatenate a string litteral and an expression (use +)
+
 --
 
 ```python
@@ -137,6 +183,19 @@ Usage: thingy [OPTIONS]
 >>> s = 'supercalifragilisticexpialidocious'
 >>> len(s)
 ```
+
+???
+Strings are indiced
+
+We can create slices [from:to not included]
+
+The complete form of slices is [from:to:step]
+
+We get an error if we use an indice that is out of range
+
+No error for the slices ;)
+
+Strings are immutable!
 
 ---
 
@@ -154,6 +213,12 @@ Usage: thingy [OPTIONS]
 >>> c == 'I will learn Python'
 >>> True
 ```
+
+???
+
+- 'Python' in 'Python is great'
+- [:]
+- a[:6] + b[:]
 
 ---
 
@@ -174,6 +239,10 @@ For more information, see:
 
 [Format Strings](https://docs.python.org/3/library/string.html#formatstrings)
 
+???
+- 'test'.isalnum()
+- Just try...
+
 ---
 
 # Lists
@@ -190,6 +259,19 @@ For more information, see:
 >>> squares[:] = []
 ```
 
+???
+Lists are an ensemble of indiced values.
+
+They can be of different types.
+
+We can also get slices
+
+They are mutable
+
+To append: list.append()
+
+To insert: list.insert(ind, elt)
+
 --
 
 ```python
@@ -200,6 +282,11 @@ For more information, see:
 >>> x[0][1]
 ```
 
+???
+We can nest lists together
+
+It is possible then to have multi-dimensional lists/arrays (even if those are not arrays) 
+
 --
 
 ```python
@@ -207,6 +294,11 @@ For more information, see:
 >>> for elt in a:
 ...	print(elt)
 ```
+
+???
+We can simply loop over all elements with for ... in
+
+Behind the scenes, it will use the list and generate iterators
 
 ---
 
@@ -221,6 +313,14 @@ For more information, see:
 Add 1 to all the items and print them
 * Using the same list, print the sum of all the elements
 * Using the same list, print the multiplication of all the elements
+
+???
+- for elt in a: print(a + 1)
+- tot = 0
+
+for elt in a: tot += elt
+
+- tot *= elt
 
 ---
 
@@ -241,6 +341,13 @@ Add 1 to all the items and print them
 ...     print('More')
 ```
 
+???
+We can make conditions with if .. elif (else if) and else.
+
+If the first condition is not match, we pass to the second, until we reach the last, default one (else)
+
+The comparison operators are == != > < >= <=
+
 ---
 
 # Control Flow
@@ -256,6 +363,9 @@ words = ['cat', 'window', 'defenestrate']
 ...         words.insert(0, w)
 ```
 
+???
+Remark the difference between looping on the list or on a copy (slice)
+
 ---
 
 # Control Flow
@@ -267,6 +377,10 @@ words = ['cat', 'window', 'defenestrate']
 >>> while i <= 10:
 ... 	print(i)
 ```
+???
+We will face an error here...
+
+For while, we have to specify a condition. It could also be used to iterate on lists with the indices
 
 --
 
@@ -293,6 +407,11 @@ words = ['cat', 'window', 'defenestrate']
 ...     print(i, a[i])
 ```
 
+???
+Range will give a range of elements from 0 to the last elt not included
+
+Another option to loop on lists with the indices
+
 ---
 
 # Control Flow
@@ -316,6 +435,11 @@ words = ['cat', 'window', 'defenestrate']
 ...         print(n, 'is a prime number')
 ```
 
+???
+Break will stop the loop that it is within (in this case, the inner loop)
+
+Continue will go to the next iteration
+
 ---
 
 # Control Flow
@@ -327,6 +451,17 @@ words = ['cat', 'window', 'defenestrate']
 ...     pass
 ```
 
+???
+Pass does nothing ... at all
+
+It can be used to create short classes or to not implement yet some functions.
+
+raise NotImplementedError is a way better solution
+
+Ignoring errors... No!
+
+Create classes that are inheriting but do not add new functions/attributes
+
 ---
 
 # Control Flow
@@ -337,6 +472,9 @@ words = ['cat', 'window', 'defenestrate']
 * Write code that removes all the duplicates in a list 
 * Write code that prints the greatest number in a list
 * Write code that sort the numbers in a list
+
+???
+
 
 ---
 
