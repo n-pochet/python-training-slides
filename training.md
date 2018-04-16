@@ -659,7 +659,6 @@ say_hello(**animals)
 >>> pairs
 ```
 
---- 
 ---
 
 # Functions
@@ -882,7 +881,6 @@ a & b # letters in both a and b
 a ^ b # letters in a or b but not both
 ```
 
---- 
 ---
 
 # Data Structures
@@ -1043,4 +1041,81 @@ fight.fight()
 ```python
 from game.monster import *
 fight.fight() # Error. Compare monster/__init__.py and player/__init__.py
+```
+
+---
+
+# Input and Output
+
+## `str()` and `repr()`
+
+```python
+>>> s = "Hello world\n"
+>>> str(s)
+>>> repr(s)
+```
+
+## Fancier Output Formatting
+
+See [Fancier Output Formatting](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+
+---
+
+# Input and Output
+
+## Reading and Writing Files
+
+```python
+>>> f = open('demo-file', 'w')
+>>> f.write('Hello file!\n)
+>>> f.close()
+```
+
+```python
+>>> with open('demo-file', 'a') as f:
+...    f.write('Another line\n')
+>>> f.closed
+>>> with open('demo-file', 'r+') as f:
+...    f.write('Third line\n')
+...    f.readlines()
+```
+
+---
+
+# Input and Output
+
+## Reading and Writing Files
+
+```python
+>>> with open('demo-file') as f:
+...    f.read()
+>>> with open('demo-file') as f:
+...    f.readline()
+...    f.readline()
+...    f.readline()
+>>> with open('demo-file') as f:
+...    f.readlines()
+>>> with open('demo-file', 'rb+') as f:
+...    f.write(b'0123456789abcdef')
+...    f.seek(5) # Go to 6th byte in the file
+...    f.read(1)
+...    f.seek(-3, 2) # 3rd byte from the end of file
+...    # 0 (begin of file), 1 (current position)
+...    # 2 (end of file)
+...    f.read(1)
+```
+
+---
+
+# Input and Output
+
+## Dump to JSON
+
+```python
+>>> import json
+>>> l = [1, 'simple', 'list']
+>>> json.dumps(l)
+>>> with open('demo-file', 'r+') as f:
+...    json.dump(l, f)
+...    loaded_list = json.load(f)
 ```
