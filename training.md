@@ -778,6 +778,131 @@ if __name__ == '__main__':
 ---
 
 # Tests
+
 ## Exercises
 
 The exercises are available [Test Exercises](https://github.com/n-pochet/python-training-exercises/tree/master/tests)
+
+---
+
+# Data Structures
+
+## More on Lists
+
+```python
+>>> products = ['modem', 'computer', 'memory', 'modem']
+>>> products.count('modem')
+>>> products.index('modem')
+>>> products.reverse()
+>>> products.sort()
+>>> products.append('laptop')
+```
+
+[Documentation](https://docs.python.org/3/library/stdtypes.html#list)
+
+---
+
+# Data Structures
+
+## List Comprehensions
+
+```python
+squares = []
+for x in range(10):
+    squares.append(x**2)
+```
+
+```python
+squares = list(map(lambda x: x**2, range(10)))
+```
+
+```python
+squares = [x**2 for x in range(10)]
+```
+
+```python
+squares_of_even = [x**2 for x in range(10) if x % 2 == 0]
+```
+
+```python
+vec = [[1,2,3], [4,5,6], [7,8,9]]
+[num for elem in vec for num in elem]
+```
+---
+
+# Data Structures
+
+## Nested List Comprehensions
+
+```python
+points = [[0,0], [0,1], [1,3]]
+doubled_points = [[p * 2 for p in point] for point in points] 
+```
+
+--
+
+## The `del` statetement
+
+```python
+a = [1, 2, 3, 4, 5]
+del a[0]
+del a[2:4]
+del a[:]
+```
+
+---
+
+# Data Structures
+
+## Tuples
+
+```python
+t = 1, 2, 'Hello'
+u = t, (3, 4)
+t[0] = 5
+one, two, hello = t
+```
+
+---
+
+# Data Structures
+
+## Sets
+
+```python
+numbers = { 1, 2, 1, 2 }
+print(numbers)
+1 in numbers
+3 in numbers
+a = set('abracadabra')
+b = set('alacazam')
+a - b # letters in a but not in b
+a | b # letters in a or b or both
+a & b # letters in both a and b
+a ^ b # letters in a or b but not both
+```
+
+--- 
+---
+
+# Data Structures
+
+## Dictionaries
+
+```python
+products = {'modem': 15, 'laptop': 2}
+products['laptop']
+products['memory'] = 3
+products['PC']
+products.get('PC', 0)
+```
+
+```python
+squares = {x: x**2 for x in range(10)}
+```
+
+```python
+products = {'modem': 15, 'laptop': 2}
+for k, v in products.items():
+    print(k, v)
+```
