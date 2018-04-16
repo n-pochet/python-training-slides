@@ -906,3 +906,118 @@ products = {'modem': 15, 'laptop': 2}
 for k, v in products.items():
     print(k, v)
 ```
+---
+
+# Data Structures
+
+## Exercises
+
+[Exercises](https://github.com/n-pochet/python-training-exercises/tree/master/data_structures)
+
+---
+
+# Modules
+
+```python
+# Fibonacci numbers module
+
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while b < n:
+        print(b, end=' ')
+        a, b = b, a+b
+    print()
+
+def fib2(n):   # return Fibonacci series up to n
+    result = []
+    a, b = 0, 1
+    while b < n:
+        result.append(b)
+        a, b = b, a+b
+    return result
+```
+
+```bash
+tree .
+fibo.py
+```
+
+---
+
+# Modules
+
+```python
+import fibo
+>>> fibo.fib(10)
+>>> fibo.fib2(10)
+>>> fibo.__name__
+```
+
+```python
+from fibo import fib, fib2
+fib(10)
+```
+
+```python
+from fibo import *
+fib(10)
+```
+
+```python
+import fibo as fib
+fib.fib(10)
+from fibo import fib as fibonacci
+fibonacci(10)
+```
+
+---
+
+# Modules
+
+```bash
+python fibo.py <arguments>
+```
+
+```python
+if __name__ == "__main__":
+    import sys
+    fib(int(sys.argv[1]))
+```
+
+```bash
+python fibo.py 10
+```
+
+---
+
+# Modules
+
+## The `dir()` Function
+
+```python
+>>> import fibo
+>>> dir(fibo)
+```
+
+```python
+>>> import builtins
+>>> dir(builtins)
+```
+
+---
+
+# Packages
+
+```bash
+tree game/
+game
+├── __init__.py
+├── monster
+│   ├── fight.py
+│   ├── __init__.py
+│   └── move.py
+└── player
+    ├── fight.py
+    ├── __init__.py
+    └── move.py
+```
