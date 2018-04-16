@@ -1034,3 +1034,13 @@ dir(game)
 import game.monster as monster
 from game.monster.fight import fight as monster_fight
 ```
+
+```python
+from game.player import *
+fight.fight()
+```
+
+```python
+from game.monster import *
+fight.fight() # Error. Compare monster/__init__.py and player/__init__.py
+```
