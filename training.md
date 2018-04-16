@@ -1021,3 +1021,16 @@ game
     ├── __init__.py
     └── move.py
 ```
+
+[Source](https://github.com/n-pochet/python-training-slides/tree/master/game)
+
+---
+
+# Packages
+
+```python
+import game
+dir(game)
+import game.monster as monster
+from game.monster.fight import fight as monster_fight
+```
