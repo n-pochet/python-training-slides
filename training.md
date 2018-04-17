@@ -1117,5 +1117,171 @@ See [Fancier Output Formatting](https://docs.python.org/3/tutorial/inputoutput.h
 >>> json.dumps(l)
 >>> with open('demo-file', 'r+') as f:
 ...    json.dump(l, f)
+...    f.seek(0)
 ...    loaded_list = json.load(f)
+```
+
+---
+
+# Input and Output
+
+## Exercises
+
+[Exercises](https://github.com/n-pochet/python-training-exercises/tree/master/input_output)
+
+---
+
+# Errors and Exceptions
+
+## Syntax Errors
+
+```python
+>>> while True print('Hello world')
+```
+
+---
+
+# Errors and Exceptions
+
+## Exceptions
+
+```python
+>>> 10 * (1/0)
+>>> 4 + spam * 3
+>>> '2' + 2
+```
+
+See [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html#bltin-exceptions)
+
+---
+
+# Errors and Exceptions
+
+## Handling Exceptions
+
+```python
+>>> 1/0
+```
+
+--
+
+```python
+try:
+    x = 1/0
+    print("I will not be printed")
+except ZeroDivisionError:
+    print("1/0 raises a ZeroDivisionError")
+```
+
+--
+
+```python
+try:
+    do_something()
+except Exception:
+    print("Catch any exception")
+```
+
+--
+
+```python
+try:
+    do_something()
+except (ZeroDivisionError, RuntimeError):
+    pass
+```
+
+---
+
+# Errors and Exceptions
+
+## Handling Exceptions
+
+```python
+try:
+    f = open('test')
+    s = f.readline()
+    i = int(s.strip())
+    raise Exception("Hey, I'm an exception")
+except OSError as err:
+    print("OS error: {}".format(err))
+except ValueError:
+    print("Could not convert data to int")
+except:
+    print("Unexpected error")
+    raise
+```
+
+---
+
+# Errors and Exceptions
+
+## Handling Exceptions
+
+```python
+def divide(x, y):
+    try:
+        z = x/y
+    except ZeroDivisionError:
+        print("Division by zero")
+    else:
+        return z
+```
+
+---
+
+# Errors and Exceptions
+
+## Handling Exceptions
+
+```python
+>>> try:
+...     raise Exception('spam', 'eggs')
+... except Exception as inst:
+...     print(type(inst))    # the exception instance
+...     print(inst.args)     # arguments stored in .args
+...     print(inst)          # __str__ allows args to be printed directly,
+...                          # but may be overridden in exception subclasses
+...     x, y = inst.args     # unpack args
+...     print('x =', x)
+...     print('y =', y)
+```
+
+---
+
+# Errors and Exceptions
+
+## Raising Exceptions
+
+```python
+>>> try:
+...     raise Exception('spam', 'eggs')
+... except Exception as inst:
+...     print(type(inst))    # the exception instance
+...     print(inst.args)     # arguments stored in .args
+...     print(inst)          # __str__ allows args to be printed directly,
+...                          # but may be overridden in exception subclasses
+...     x, y = inst.args     # unpack args
+...     print('x =', x)
+...     print('y =', y)
+```
+
+---
+
+# Errors and Exceptions
+
+## Defining Clean-up Actions
+
+```python
+def print_file(filename):
+    try:
+        f = open(filename)
+        s = f.read()
+    except OSError as err:
+        print("OS error: {}".format(err))
+    else:
+        print(s)
+        f.close()
+    finally:
+        print("Tried to open {}".format(filename))
 ```
