@@ -1285,3 +1285,130 @@ def print_file(filename):
     finally:
         print("Tried to open {}".format(filename))
 ```
+
+---
+
+# Classes
+
+## Why?
+
+```python
+point = (0, 0)
+def add(a, b):
+    c = (a[0] + b[0], a[1] + b[1])
+    return c
+print(point)
+```
+
+Problems:
+
+* A new `point` involves using a `tuple`
+* To access `x` and `y` coordinates is not obvious. Is it p[0] or p[1]?
+* What is the representation of `point`?
+* ... 
+
+How can we improve our `point`?
+
+---
+
+# Classes
+
+## First try on Point
+
+```python
+class Point():
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+```
+
+```python
+p = Point(0, 0)
+p.x = 1
+p.y = 2
+print(p)
+```
+
+---
+
+# Classes
+
+## How to represent Point?
+
+```python
+class Point():
+    def __repr__(self):
+        return "Point(x: {}, y: {})".format(self.x, self.y)
+    
+    def __str__(self):
+        return "({}, {})".format(self.x, self.y)
+```
+
+```python
+p = Point(0, 1)
+p
+print(p)
+```
+
+---
+
+# Classes
+
+## How to add `Point`s?
+
+```python
+class Point():
+    def add(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)
+```
+
+```python
+class Point():
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)
+```
+
+```python
+p1 = Point(1, 2)
+p2 = Point(1, 1)
+p3 = p1 + p2
+```
+
+[More info](https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types)
+
+---
+
+# Classes
+## Create a `Circle`
+
+```python
+circle = (Point(1, 1), 1)
+```
+
+```python
+class Circle(Point):
+    def __init__(self, x, y, r):
+        super().__init__(x, y)
+        self.r = r
+```
+
+```python
+c = Circle(1, 1, 1)
+```
+
+---
+
+# Classes
+
+## Create a `Line`
+
+```python
+class Line():
+    def __init__(self, *points):
+        self.points = list(points)
+```
