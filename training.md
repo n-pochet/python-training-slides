@@ -1412,3 +1412,12 @@ class Line():
     def __init__(self, *points):
         self.points = list(points)
 ```
+
+---
+
+# Classes
+
+## More information
+
+[Python Tutorial](https://docs.python.org/3/tutorial/classes.html)
+
