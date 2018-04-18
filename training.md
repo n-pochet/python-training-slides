@@ -1421,3 +1421,51 @@ class Line():
 
 [Python Tutorial](https://docs.python.org/3/tutorial/classes.html)
 
+---
+
+# Classes
+
+## Exercises
+
+[Exercises](https://github.com/n-pochet/python-training-exercises/tree/master/classes)
+
+---
+
+# Virtualenv
+
+```bash
+python3 -m venv myvenv
+```
+
+* Unix
+
+```bash
+source myvenv/bin/activate
+```
+
+* Windows
+
+```powershell
+myvenv\Scripts\activate.bat
+```
+
+---
+
+# Install packages
+
+```bash
+pip search requests
+```
+
+```bash
+pip install requests
+pip install requests==2.6.0
+pip install --upgrade requests
+```
+
+```bash
+pip show pkg_name
+pip list
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
