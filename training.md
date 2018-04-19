@@ -1483,6 +1483,11 @@ python -m venv venv
 ```bash
 source venv/bin/activate
 ```
+---
+
+# Documentation with Sphinx
+
+## Pre-requisites
 
 * Install sphinx
 
