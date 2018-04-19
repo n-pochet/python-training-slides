@@ -1,3 +1,4 @@
 yarn.lock
 demo.html
 __pycache__
+.venv
