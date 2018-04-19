@@ -1463,3 +1463,98 @@ pip list
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
+
+---
+
+# Documentation with Sphinx
+
+## Pre-requisites
+
+Your code must contain `doc-strings`
+
+* Create a virtualenv
+
+```python
+python -m venv venv
+```
+
+* Source the venv
+
+```bash
+source venv/bin/activate
+```
+
+* Install sphinx
+
+```bash
+pip install sphinx
+```
+
+* Create a `doc` directory
+* Inside the `doc` directory, use `sphinx-quickstart`
+
+```bash
+cd doc
+sphinx-quickstart
+```
+
+---
+
+# Documentat with Sphinx
+
+## Configure Sphinx
+
+* Add the following to `conf.py`
+
+```python
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../..'))
+```
+
+* Add Napoleon extension
+
+```python
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon'
+]
+```
+
+* Generate the module docs
+
+```bash
+sphinx-apidoc ../../game -o source
+```
+
+---
+
+# Documentation with Sphinx
+
+## Index.rst
+
+```
+.. game documentation master file, created by
+   sphinx-quickstart on Thu Apr 19 08:52:00 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to game's documentation!
+================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+```

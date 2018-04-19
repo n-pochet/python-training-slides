@@ -2,3 +2,4 @@ yarn.lock
 demo.html
 __pycache__
 .venv
+game/doc/build
