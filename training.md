@@ -253,7 +253,7 @@ For more information, see:
 >>> squares[-1]
 >>> squares[:]
 >>> squares + [ 36, 49 ]
->>> sqares[5] = 25
+>>> squares[5] = 25
 >>> squares.append(8**2)
 >>> squares[3:] = []
 >>> squares[:] = []
