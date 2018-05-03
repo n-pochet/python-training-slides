@@ -1505,7 +1505,7 @@ sphinx-quickstart
 
 ---
 
-# Documentat with Sphinx
+# Documentation with Sphinx
 
 ## Configure Sphinx
 
@@ -1562,4 +1562,15 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+```
+
+---
+
+# Documentation with Sphinx
+
+## Create documentation
+
+```bash
+cd doc
+sphinx-build source html
 ```
