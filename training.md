@@ -1574,3 +1574,9 @@ Indices and tables
 cd doc
 sphinx-build source html
 ```
+
+---
+
+# Repository
+
+[Slides Repository](https://github.com/n-pochet/python-training-slides)
